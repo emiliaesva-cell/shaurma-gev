@@ -3,11 +3,16 @@ document.addEventListener('DOMContentLoaded', function () {
     // ===== ГАЛЕРЕЯ: список твоих фото =====
     // СЮДА ДОБАВЛЯЙ НАЗВАНИЯ СВОИХ ФОТО
     const galleryImages = [
-        'gallery1.jpg',
-        'gallery2.jpg',
-        'gallery3.jpg',
-        'gallery4.jpg',
-        'gallery5.jpg'
+      const galleryImages = [
+    'gallery1.jpg',
+    'gallery2.jpg',
+    'gallery3.jpg',
+    'gallery4.jpg',
+    'gallery5.jpg',
+    'moja_foto.jpg',    // ← твоё фото
+    'eda.jpg',          // ← твоё фото
+    'interior.png'      // ← твоё фото
+];
         // Добавляй новые фото сюда, например:
         // 'moya_foto.jpg',
         // 'eda.jpg'
