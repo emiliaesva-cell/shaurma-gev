@@ -18,9 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
- 
     // ============================================
-    // 3. ПОИСК ПО МЕНЮ
+    // 2. ПОИСК ПО МЕНЮ
     // ============================================
     const searchInput = document.getElementById('searchInput');
     searchInput.addEventListener('input', function() {
@@ -48,14 +47,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     cat.classList.remove('active');
                 }
-          });
-    
-    
+            });
+        }
+    });
+
     // ============================================
-    // 4. ОТЗЫВЫ (добавление новых)
+    // 3. ОТЗЫВЫ (настоящие, с сохранением в localStorage)
     // ============================================
     const reviewForm = document.getElementById('reviewForm');
-    const reviewsGrid = document.querySelector('.reviews-grid');
+    const reviewsList = document.getElementById('reviewsList');
+    const noReviewsMsg = document.querySelector('.no-reviews');
+
+    // Загружаем сохранённые отзывы
+    loadReviews();
 
     reviewForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -69,96 +73,91 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Создаём звёзды
-        const stars = '⭐'.repeat(rating);
+        // Создаём объект отзыва
+        const review = {
+            id: Date.now(),
+            name: name,
+            text: text,
+            rating: rating,
+            date: new Date().toLocaleDateString('ru-RU')
+        };
 
-        // Создаём карточку отзыва
-        const card = document.createElement('div');
-        card.classList.add('review-card');
-        card.innerHTML = `
-            <div class="review-header">
-                <span class="review-name">${name}</span>
-                <span class="review-rating">${stars}</span>
-            </div>
-            <p class="review-text">"${text}"</p>
-            <span class="review-date">Только что</span>
-        `;
+        // Сохраняем в localStorage
+        saveReview(review);
 
-        // Вставляем в начало
-        reviewsGrid.prepend(card);
+        // Добавляем отзыв на страницу
+        addReviewToPage(review);
 
         // Очищаем форму
         reviewForm.reset();
 
-        // Показываем уведомление
+        // Убираем сообщение "Пока нет отзывов"
+        if (noReviewsMsg) {
+            noReviewsMsg.style.display = 'none';
+        }
+
         alert('Спасибо за отзыв! ❤️');
     });
 
-    // ============================================
-    // 5. ЗАГРУЗКА ФОТО И ВИДЕО
-    // ============================================
-    const uploadForm = document.getElementById('uploadForm');
-    const fileInput = document.getElementById('fileInput');
-    const gallery = document.getElementById('gallery');
-
-    // Создаём сообщение "Пока нет файлов"
-    function showEmptyMessage() {
-        if (gallery.children.length === 0) {
-            const msg = document.createElement('p');
-            msg.id = 'emptyGalleryMsg';
-            msg.textContent = '📷 Пока нет загруженных файлов. Будьте первыми!';
-            msg.style.textAlign = 'center';
-            msg.style.color = '#888';
-            msg.style.gridColumn = '1 / -1';
-            msg.style.padding = '30px 0';
-            gallery.appendChild(msg);
-        }
+    // Функция сохранения отзыва
+    function saveReview(review) {
+        let reviews = JSON.parse(localStorage.getItem('shaurmaReviews')) || [];
+        reviews.push(review);
+        localStorage.setItem('shaurmaReviews', JSON.stringify(reviews));
     }
-    showEmptyMessage();
 
-    uploadForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const files = fileInput.files;
-        if (files.length === 0) {
-            alert('Выберите хотя бы один файл!');
+    // Функция загрузки отзывов
+    function loadReviews() {
+        const reviews = JSON.parse(localStorage.getItem('shaurmaReviews')) || [];
+        
+        if (reviews.length === 0) {
             return;
         }
 
-        // Удаляем сообщение "Пока нет файлов"
-        const emptyMsg = document.getElementById('emptyGalleryMsg');
-        if (emptyMsg) emptyMsg.remove();
-
-        for (let i = 0; i < files.length; i++) {
-            const file = files[i];
-            const div = document.createElement('div');
-            div.classList.add('gallery-item');
-
-            if (file.type.startsWith('video/')) {
-                const video = document.createElement('video');
-                video.src = URL.createObjectURL(file);
-                video.controls = true;
-                video.muted = true;
-                video.preload = 'metadata';
-                div.appendChild(video);
-            } else if (file.type.startsWith('image/')) {
-                const img = document.createElement('img');
-                img.src = URL.createObjectURL(file);
-                img.alt = 'Загруженное фото';
-                div.appendChild(img);
-            } else {
-                alert(`Файл "${file.name}" не является фото или видео.`);
-                continue;
-            }
-
-            gallery.prepend(div);
+        // Убираем сообщение "Пока нет отзывов"
+        if (noReviewsMsg) {
+            noReviewsMsg.style.display = 'none';
         }
 
-        fileInput.value = '';
-    });
+        // Сортируем отзывы: новые сверху
+        reviews.sort((a, b) => b.id - a.id);
+
+        // Добавляем каждый отзыв на страницу
+        reviews.forEach(review => {
+            addReviewToPage(review);
+        });
+    }
+
+    // Функция добавления отзыва на страницу
+    function addReviewToPage(review) {
+        const reviewDiv = document.createElement('div');
+        reviewDiv.classList.add('review-card');
+
+        // Звёзды рейтинга
+        const stars = '⭐'.repeat(review.rating);
+
+        reviewDiv.innerHTML = `
+            <div class="review-header">
+                <span class="review-name">${escapeHTML(review.name)}</span>
+                <span class="review-rating">${stars}</span>
+            </div>
+            <p class="review-text">"${escapeHTML(review.text)}"</p>
+            <span class="review-date">${review.date}</span>
+        `;
+
+        // Добавляем в начало списка
+        reviewsList.prepend(reviewDiv);
+    }
+
+    // Простая защита от XSS (безопасное отображение текста)
+    function escapeHTML(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
 
     // ============================================
-    // 6. ПЕРВАЯ КАТЕГОРИЯ ОТКРЫТА ПО УМОЛЧАНИЮ
+    // 4. ПЕРВАЯ КАТЕГОРИЯ ОТКРЫТА ПО УМОЛЧАНИЮ
     // ============================================
     const firstCategory = document.querySelector('.category');
     if (firstCategory) {
