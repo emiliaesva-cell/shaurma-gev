@@ -5,21 +5,20 @@ document.addEventListener('DOMContentLoaded', function () {
     const galleryImages = [
       const galleryImages = [
     const galleryImages = [
+   const galleryImages = [
     'gallery1.jpg',
     'gallery2.jpg',
     'gallery3.jpg',
     'gallery4.jpg',
     'gallery5.jpg',
-    '1.jpg',   // ← добавила
-    '2.jpg',   // ← добавила
-    '3.jpg',   // ← добавила
-    '4.jpg',   // ← добавила
-    '5.jpg',   // ← добавила
-    '6.jpg'    // ← добавила
+    '1.jpg',
+    '2.jpg',
+    '3.jpg',
+    '4.jpg',
+    '5.jpg',
+    '6.jpg'
 ];
-        // Добавляй новые фото сюда, например:
-        // 'moya_foto.jpg',
-        // 'eda.jpg'
+       
     ];
 
     const galleryGrid = document.getElementById('galleryGrid');
