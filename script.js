@@ -1,34 +1,38 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // ===== ГАЛЕРЕЯ =====
+    // ===== ГАЛЕРЕЯ: автоматически подгружает фото из папки img =====
+    const galleryGrid = document.getElementById('galleryGrid');
+    
+    // Список твоих фото (добавляй сюда новые названия)
     const galleryImages = [
         'gallery1.jpg',
         'gallery2.jpg',
         'gallery3.jpg',
         'gallery4.jpg',
-        'gallery5.jpg',
-        '1.jpg',
-        '2.jpg',
-        '3.jpg',
-        '4.jpg',
-        '5.jpg',
-        '6.jpg'
+        'gallery5.jpg'
+        // Добавляй новые фото сюда: 'новое_фото.jpg'
     ];
 
-    const galleryGrid = document.getElementById('galleryGrid');
-
-    if (galleryGrid) {
-        galleryImages.forEach(imageName => {
-            const div = document.createElement('div');
-            div.classList.add('gallery-item');
-            
+    galleryImages.forEach(imageName => {
+        const div = document.createElement('div');
+        div.classList.add('gallery-item');
+        
+        // Проверяем, видео ли это
+        if (imageName.endsWith('.mp4') || imageName.endsWith('.webm') || imageName.endsWith('.mov')) {
+            const video = document.createElement('video');
+            video.src = `img/${imageName}`;
+            video.controls = true;
+            video.muted = true;
+            div.appendChild(video);
+        } else {
             const img = document.createElement('img');
             img.src = `img/${imageName}`;
             img.alt = 'Фото нашей шаурмичной';
             div.appendChild(img);
-            galleryGrid.appendChild(div);
-        });
-    }
+        }
+        
+        galleryGrid.appendChild(div);
+    });
 
     // ===== ОТЗЫВЫ =====
     const form = document.getElementById('reviewForm');
