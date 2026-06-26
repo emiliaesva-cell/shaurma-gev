@@ -18,128 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ============================================
-    // 2. КОРЗИНА
-    // ============================================
-    let cart = [];
-
-    // Элементы DOM
-    const cartBtn = document.getElementById('cartBtn');
-    const cartModal = document.getElementById('cartModal');
-    const closeBtn = document.querySelector('.close');
-    const cartItems = document.getElementById('cartItems');
-    const cartTotal = document.getElementById('cartTotal');
-    const cartCount = document.getElementById('cartCount');
-    const clearCartBtn = document.getElementById('clearCart');
-    const checkoutBtn = document.getElementById('checkoutBtn');
-
-    // Функция обновления корзины
-    function updateCart() {
-        // Обновляем счётчик на кнопке
-        cartCount.textContent = cart.length;
-
-        if (cart.length === 0) {
-            cartItems.innerHTML = '<p style="text-align:center;color:#888;">Корзина пуста</p>';
-            cartTotal.textContent = 'Итого: 0 ₽';
-            return;
-        }
-
-        // Группируем одинаковые товары
-        const grouped = {};
-        cart.forEach(item => {
-            const key = item.name;
-            if (grouped[key]) {
-                grouped[key].count += 1;
-            } else {
-                grouped[key] = { ...item, count: 1 };
-            }
-        });
-
-        let html = '';
-        let total = 0;
-        for (const key in grouped) {
-            const item = grouped[key];
-            const sum = item.price * item.count;
-            total += sum;
-            html += `
-                <div class="cart-item">
-                    <span class="item-name">${item.name} × ${item.count}</span>
-                    <span class="item-price">${sum} ₽</span>
-                    <button class="item-remove" data-name="${item.name}">✕</button>
-                </div>
-            `;
-        }
-
-        cartItems.innerHTML = html;
-        cartTotal.textContent = `Итого: ${total} ₽`;
-
-        // Вешаем обработчики на кнопки удаления
-        document.querySelectorAll('.item-remove').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const name = this.dataset.name;
-                // Удаляем все товары с таким именем
-                cart = cart.filter(item => item.name !== name);
-                updateCart();
-            });
-        });
-    }
-
-    // Добавление в корзину
-    document.querySelectorAll('.add-to-cart').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.stopPropagation(); // Чтобы не срабатывал аккордеон
-            const card = this.closest('.menu-card');
-            const name = card.dataset.name;
-            const price = parseInt(card.dataset.price);
-            cart.push({ name, price });
-            updateCart();
-            // Визуальный фидбек
-            this.textContent = '✓';
-            setTimeout(() => { this.textContent = '+'; }, 600);
-        });
-    });
-
-    // Открыть корзину
-    cartBtn.addEventListener('click', function() {
-        cartModal.classList.add('show');
-        updateCart();
-    });
-
-    // Закрыть корзину
-    closeBtn.addEventListener('click', function() {
-        cartModal.classList.remove('show');
-    });
-
-    // Закрыть по клику вне окна
-    cartModal.addEventListener('click', function(e) {
-        if (e.target === this) {
-            cartModal.classList.remove('show');
-        }
-    });
-
-    // Очистить корзину
-    clearCartBtn.addEventListener('click', function() {
-        if (cart.length === 0) return;
-        if (confirm('Очистить корзину?')) {
-            cart = [];
-            updateCart();
-        }
-    });
-
-    // Оформить заказ
-    checkoutBtn.addEventListener('click', function() {
-        if (cart.length === 0) {
-            alert('Корзина пуста!');
-            return;
-        }
-        const total = cart.reduce((sum, item) => sum + item.price, 0);
-        const items = cart.map(item => item.name).join(', ');
-        alert(`✅ Заказ оформлен!\n\nБлюда: ${items}\nИтого: ${total} ₽\n\nСпасибо за заказ! Ждём вас снова 🥙`);
-        cart = [];
-        updateCart();
-        cartModal.classList.remove('show');
-    });
-
+ 
     // ============================================
     // 3. ПОИСК ПО МЕНЮ
     // ============================================
@@ -169,10 +48,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     cat.classList.remove('active');
                 }
-            });
-        }
-    });
-
+          });
+    
+    
     // ============================================
     // 4. ОТЗЫВЫ (добавление новых)
     // ============================================
