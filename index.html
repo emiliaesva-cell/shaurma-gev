@@ -16,12 +16,11 @@
         </div>
     </header>
 
-    <!-- ПОИСК И КОРЗИНА -->
+    <!-- ПОИСК (без корзины) -->
     <div class="toolbar">
         <div class="container">
             <div class="toolbar-row">
                 <input type="text" id="searchInput" placeholder="🔍 Поиск по меню..." class="search-input" />
-                <button class="cart-btn" id="cartBtn">🛒 Корзина <span id="cartCount">0</span></button>
             </div>
         </div>
     </div>
@@ -39,15 +38,15 @@
                 </div>
                 <div class="category-content">
                     <div class="menu-grid">
-                        <div class="menu-card" data-name="Свиная" data-price="200"><div class="card-body"><h3>Свиная</h3><span class="price">200₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Куриная" data-price="200"><div class="card-body"><h3>Куриная</h3><span class="price">200₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Чикен" data-price="195"><div class="card-body"><h3>Чикен</h3><span class="price">195₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Шаурма мясной твикс" data-price="190"><div class="card-body"><h3>Мясной твикс</h3><span class="price">190₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Шашлык в лаваше свинина" data-price="240"><div class="card-body"><h3>Шашлык в лаваше (свинина)</h3><span class="price">240₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Шашлык в лаваше курица" data-price="220"><div class="card-body"><h3>Шашлык в лаваше (курица)</h3><span class="price">220₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Люля в лаваше курица" data-price="190"><div class="card-body"><h3>Люля в лаваше (курица)</h3><span class="price">190₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Люля в лаваше говядина" data-price="220"><div class="card-body"><h3>Люля в лаваше (говядина)</h3><span class="price">220₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Шаурма фирменная" data-price="255"><div class="card-body"><h3>Фирменная (курица, свинина)</h3><span class="price">255₽</span><button class="add-to-cart">+</button></div></div>
+                        <div class="menu-card" data-name="Свиная" data-price="200"><div class="card-body"><h3>Свиная</h3><span class="price">200₽</span></div></div>
+                        <div class="menu-card" data-name="Куриная" data-price="200"><div class="card-body"><h3>Куриная</h3><span class="price">200₽</span></div></div>
+                        <div class="menu-card" data-name="Чикен" data-price="195"><div class="card-body"><h3>Чикен</h3><span class="price">195₽</span></div></div>
+                        <div class="menu-card" data-name="Шаурма мясной твикс" data-price="190"><div class="card-body"><h3>Мясной твикс</h3><span class="price">190₽</span></div></div>
+                        <div class="menu-card" data-name="Шашлык в лаваше свинина" data-price="240"><div class="card-body"><h3>Шашлык в лаваше (свинина)</h3><span class="price">240₽</span></div></div>
+                        <div class="menu-card" data-name="Шашлык в лаваше курица" data-price="220"><div class="card-body"><h3>Шашлык в лаваше (курица)</h3><span class="price">220₽</span></div></div>
+                        <div class="menu-card" data-name="Люля в лаваше курица" data-price="190"><div class="card-body"><h3>Люля в лаваше (курица)</h3><span class="price">190₽</span></div></div>
+                        <div class="menu-card" data-name="Люля в лаваше говядина" data-price="220"><div class="card-body"><h3>Люля в лаваше (говядина)</h3><span class="price">220₽</span></div></div>
+                        <div class="menu-card" data-name="Шаурма фирменная" data-price="255"><div class="card-body"><h3>Фирменная (курица, свинина)</h3><span class="price">255₽</span></div></div>
                     </div>
                 </div>
             </div>
@@ -60,11 +59,11 @@
                 </div>
                 <div class="category-content">
                     <div class="menu-grid">
-                        <div class="menu-card" data-name="Хот-дог классика" data-price="90"><div class="card-body"><h3>Классика</h3><span class="price">90₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Хот-дог с колбаской" data-price="90"><div class="card-body"><h3>С колбаской</h3><span class="price">90₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Хот-дог в лаваше с сосиской" data-price="90"><div class="card-body"><h3>В лаваше с сосиской</h3><span class="price">90₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Хот-дог в лаваше с колбаской" data-price="90"><div class="card-body"><h3>В лаваше с колбаской</h3><span class="price">90₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Хот-дог фирменный" data-price="185"><div class="card-body"><h3>Фирменный</h3><span class="price">185₽</span><button class="add-to-cart">+</button></div></div>
+                        <div class="menu-card" data-name="Хот-дог классика" data-price="90"><div class="card-body"><h3>Классика</h3><span class="price">90₽</span></div></div>
+                        <div class="menu-card" data-name="Хот-дог с колбаской" data-price="90"><div class="card-body"><h3>С колбаской</h3><span class="price">90₽</span></div></div>
+                        <div class="menu-card" data-name="Хот-дог в лаваше с сосиской" data-price="90"><div class="card-body"><h3>В лаваше с сосиской</h3><span class="price">90₽</span></div></div>
+                        <div class="menu-card" data-name="Хот-дог в лаваше с колбаской" data-price="90"><div class="card-body"><h3>В лаваше с колбаской</h3><span class="price">90₽</span></div></div>
+                        <div class="menu-card" data-name="Хот-дог фирменный" data-price="185"><div class="card-body"><h3>Фирменный</h3><span class="price">185₽</span></div></div>
                     </div>
                 </div>
             </div>
@@ -77,14 +76,14 @@
                 </div>
                 <div class="category-content">
                     <div class="menu-grid">
-                        <div class="menu-card" data-name="Гирос куриный" data-price="200"><div class="card-body"><h3>Гирос куриный</h3><span class="price">200₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Гирос свиной" data-price="200"><div class="card-body"><h3>Гирос свиной</h3><span class="price">200₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Донер куриный" data-price="230"><div class="card-body"><h3>Донер куриный</h3><span class="price">230₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Донер свиной" data-price="230"><div class="card-body"><h3>Донер свиной</h3><span class="price">230₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Шаурма в багете курица" data-price="230"><div class="card-body"><h3>В багете (курица)</h3><span class="price">230₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Шаурма в багете свинина" data-price="240"><div class="card-body"><h3>В багете (свинина)</h3><span class="price">240₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Люля в багете курица" data-price="240"><div class="card-body"><h3>Люля в багете (курица)</h3><span class="price">240₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Люля в багете говядина" data-price="260"><div class="card-body"><h3>Люля в багете (говядина)</h3><span class="price">260₽</span><button class="add-to-cart">+</button></div></div>
+                        <div class="menu-card" data-name="Гирос куриный" data-price="200"><div class="card-body"><h3>Гирос куриный</h3><span class="price">200₽</span></div></div>
+                        <div class="menu-card" data-name="Гирос свиной" data-price="200"><div class="card-body"><h3>Гирос свиной</h3><span class="price">200₽</span></div></div>
+                        <div class="menu-card" data-name="Донер куриный" data-price="230"><div class="card-body"><h3>Донер куриный</h3><span class="price">230₽</span></div></div>
+                        <div class="menu-card" data-name="Донер свиной" data-price="230"><div class="card-body"><h3>Донер свиной</h3><span class="price">230₽</span></div></div>
+                        <div class="menu-card" data-name="Шаурма в багете курица" data-price="230"><div class="card-body"><h3>В багете (курица)</h3><span class="price">230₽</span></div></div>
+                        <div class="menu-card" data-name="Шаурма в багете свинина" data-price="240"><div class="card-body"><h3>В багете (свинина)</h3><span class="price">240₽</span></div></div>
+                        <div class="menu-card" data-name="Люля в багете курица" data-price="240"><div class="card-body"><h3>Люля в багете (курица)</h3><span class="price">240₽</span></div></div>
+                        <div class="menu-card" data-name="Люля в багете говядина" data-price="260"><div class="card-body"><h3>Люля в багете (говядина)</h3><span class="price">260₽</span></div></div>
                     </div>
                 </div>
             </div>
@@ -97,8 +96,8 @@
                 </div>
                 <div class="category-content">
                     <div class="menu-grid">
-                        <div class="menu-card" data-name="Чизбургер курица" data-price="160"><div class="card-body"><h3>Чизбургер (курица)</h3><span class="price">160₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Чизбургер говядина" data-price="180"><div class="card-body"><h3>Чизбургер (говядина)</h3><span class="price">180₽</span><button class="add-to-cart">+</button></div></div>
+                        <div class="menu-card" data-name="Чизбургер курица" data-price="160"><div class="card-body"><h3>Чизбургер (курица)</h3><span class="price">160₽</span></div></div>
+                        <div class="menu-card" data-name="Чизбургер говядина" data-price="180"><div class="card-body"><h3>Чизбургер (говядина)</h3><span class="price">180₽</span></div></div>
                     </div>
                 </div>
             </div>
@@ -111,9 +110,9 @@
                 </div>
                 <div class="category-content">
                     <div class="menu-grid">
-                        <div class="menu-card" data-name="Наггетсы" data-price="109"><div class="card-body"><h3>Наггетсы</h3><span class="price">109₽/6шт.</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Картофель фри" data-price="140"><div class="card-body"><h3>Фри</h3><span class="price">140₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Крылышки в кляре" data-price="150"><div class="card-body"><h3>Крылышки в кляре</h3><span class="price">150₽/3шт.</span><button class="add-to-cart">+</button></div></div>
+                        <div class="menu-card" data-name="Наггетсы" data-price="109"><div class="card-body"><h3>Наггетсы</h3><span class="price">109₽/6шт.</span></div></div>
+                        <div class="menu-card" data-name="Картофель фри" data-price="140"><div class="card-body"><h3>Фри</h3><span class="price">140₽</span></div></div>
+                        <div class="menu-card" data-name="Крылышки в кляре" data-price="150"><div class="card-body"><h3>Крылышки в кляре</h3><span class="price">150₽/3шт.</span></div></div>
                     </div>
                 </div>
             </div>
@@ -126,13 +125,13 @@
                 </div>
                 <div class="category-content">
                     <div class="menu-grid">
-                        <div class="menu-card" data-name="Шашлык свинина карбонат" data-price="160"><div class="card-body"><h3>Шашлык (свинина карбонат)</h3><span class="price">160₽/100гр.</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Шашлык свинина шея" data-price="180"><div class="card-body"><h3>Шашлык (свинина шея)</h3><span class="price">180₽/100гр.</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Шашлык курица" data-price="140"><div class="card-body"><h3>Шашлык (курица)</h3><span class="price">140₽/100гр.</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Люля курица" data-price="180"><div class="card-body"><h3>Люля (курица)</h3><span class="price">180₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Люля говядина" data-price="210"><div class="card-body"><h3>Люля (говядина)</h3><span class="price">210₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Овощи" data-price="120"><div class="card-body"><h3>Овощи</h3><span class="price">120₽/100гр.</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Грибы" data-price="130"><div class="card-body"><h3>Грибы</h3><span class="price">130₽/100гр.</span><button class="add-to-cart">+</button></div></div>
+                        <div class="menu-card" data-name="Шашлык свинина карбонат" data-price="160"><div class="card-body"><h3>Шашлык (свинина карбонат)</h3><span class="price">160₽/100гр.</span></div></div>
+                        <div class="menu-card" data-name="Шашлык свинина шея" data-price="180"><div class="card-body"><h3>Шашлык (свинина шея)</h3><span class="price">180₽/100гр.</span></div></div>
+                        <div class="menu-card" data-name="Шашлык курица" data-price="140"><div class="card-body"><h3>Шашлык (курица)</h3><span class="price">140₽/100гр.</span></div></div>
+                        <div class="menu-card" data-name="Люля курица" data-price="180"><div class="card-body"><h3>Люля (курица)</h3><span class="price">180₽</span></div></div>
+                        <div class="menu-card" data-name="Люля говядина" data-price="210"><div class="card-body"><h3>Люля (говядина)</h3><span class="price">210₽</span></div></div>
+                        <div class="menu-card" data-name="Овощи" data-price="120"><div class="card-body"><h3>Овощи</h3><span class="price">120₽/100гр.</span></div></div>
+                        <div class="menu-card" data-name="Грибы" data-price="130"><div class="card-body"><h3>Грибы</h3><span class="price">130₽/100гр.</span></div></div>
                     </div>
                 </div>
             </div>
@@ -145,8 +144,8 @@
                 </div>
                 <div class="category-content">
                     <div class="menu-grid">
-                        <div class="menu-card" data-name="Охотничий бокс" data-price="250"><div class="card-body"><h3>Охотничий</h3><p class="ingredients">Колбаски, фри, соус</p><span class="price">250₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Чикен бокс" data-price="250"><div class="card-body"><h3>Чикен</h3><p class="ingredients">Крылышки, фри, соус</p><span class="price">250₽</span><button class="add-to-cart">+</button></div></div>
+                        <div class="menu-card" data-name="Охотничий бокс" data-price="250"><div class="card-body"><h3>Охотничий</h3><p class="ingredients">Колбаски, фри, соус</p><span class="price">250₽</span></div></div>
+                        <div class="menu-card" data-name="Чикен бокс" data-price="250"><div class="card-body"><h3>Чикен</h3><p class="ingredients">Крылышки, фри, соус</p><span class="price">250₽</span></div></div>
                     </div>
                 </div>
             </div>
@@ -159,26 +158,26 @@
                 </div>
                 <div class="category-content">
                     <div class="menu-grid">
-                        <div class="menu-card" data-name="Красный соус" data-price="10"><div class="card-body"><h3>Красный соус</h3><span class="price">10₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Сырный лаваш" data-price="10"><div class="card-body"><h3>Сырный лаваш</h3><span class="price">10₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Халапеньо" data-price="50"><div class="card-body"><h3>Халапеньо</h3><span class="price">50₽/50гр.</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Картошка фри" data-price="10"><div class="card-body"><h3>Картошка фри</h3><span class="price">10₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Доп. мясо" data-price="20"><div class="card-body"><h3>Доп. мясо</h3><span class="price">20₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Морковка" data-price="20"><div class="card-body"><h3>Морковка</h3><span class="price">20₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Сыр" data-price="50"><div class="card-body"><h3>Сыр</h3><span class="price">50₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Сырный соус" data-price="50"><div class="card-body"><h3>Сырный соус</h3><span class="price">50₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Томатный чесночный" data-price="50"><div class="card-body"><h3>Томатный чесночный</h3><span class="price">50₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Эспрессо" data-price="55"><div class="card-body"><h3>Эспрессо</h3><span class="price">55₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Американо" data-price="65"><div class="card-body"><h3>Американо</h3><span class="price">65₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Капучино" data-price="70"><div class="card-body"><h3>Капучино</h3><span class="price">70₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Латте" data-price="75"><div class="card-body"><h3>Латте</h3><span class="price">75₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Шоколад" data-price="60"><div class="card-body"><h3>Шоколад</h3><span class="price">60₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Чай" data-price="30"><div class="card-body"><h3>Чай</h3><span class="price">30₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Молочный коктейль" data-price="220"><div class="card-body"><h3>Молочный коктейль</h3><span class="price">220₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Мохито" data-price="220"><div class="card-body"><h3>Мохито</h3><span class="price">220₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Холодный кофе" data-price="190"><div class="card-body"><h3>Холодный кофе</h3><span class="price">190₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Сироп" data-price="20"><div class="card-body"><h3>Сироп</h3><span class="price">20₽</span><button class="add-to-cart">+</button></div></div>
-                        <div class="menu-card" data-name="Мороженое пломбир" data-price="49"><div class="card-body"><h3>Мороженое пломбир</h3><span class="price">49₽</span><button class="add-to-cart">+</button></div></div>
+                        <div class="menu-card" data-name="Красный соус" data-price="10"><div class="card-body"><h3>Красный соус</h3><span class="price">10₽</span></div></div>
+                        <div class="menu-card" data-name="Сырный лаваш" data-price="10"><div class="card-body"><h3>Сырный лаваш</h3><span class="price">10₽</span></div></div>
+                        <div class="menu-card" data-name="Халапеньо" data-price="50"><div class="card-body"><h3>Халапеньо</h3><span class="price">50₽/50гр.</span></div></div>
+                        <div class="menu-card" data-name="Картошка фри" data-price="10"><div class="card-body"><h3>Картошка фри</h3><span class="price">10₽</span></div></div>
+                        <div class="menu-card" data-name="Доп. мясо" data-price="20"><div class="card-body"><h3>Доп. мясо</h3><span class="price">20₽</span></div></div>
+                        <div class="menu-card" data-name="Морковка" data-price="20"><div class="card-body"><h3>Морковка</h3><span class="price">20₽</span></div></div>
+                        <div class="menu-card" data-name="Сыр" data-price="50"><div class="card-body"><h3>Сыр</h3><span class="price">50₽</span></div></div>
+                        <div class="menu-card" data-name="Сырный соус" data-price="50"><div class="card-body"><h3>Сырный соус</h3><span class="price">50₽</span></div></div>
+                        <div class="menu-card" data-name="Томатный чесночный" data-price="50"><div class="card-body"><h3>Томатный чесночный</h3><span class="price">50₽</span></div></div>
+                        <div class="menu-card" data-name="Эспрессо" data-price="55"><div class="card-body"><h3>Эспрессо</h3><span class="price">55₽</span></div></div>
+                        <div class="menu-card" data-name="Американо" data-price="65"><div class="card-body"><h3>Американо</h3><span class="price">65₽</span></div></div>
+                        <div class="menu-card" data-name="Капучино" data-price="70"><div class="card-body"><h3>Капучино</h3><span class="price">70₽</span></div></div>
+                        <div class="menu-card" data-name="Латте" data-price="75"><div class="card-body"><h3>Латте</h3><span class="price">75₽</span></div></div>
+                        <div class="menu-card" data-name="Шоколад" data-price="60"><div class="card-body"><h3>Шоколад</h3><span class="price">60₽</span></div></div>
+                        <div class="menu-card" data-name="Чай" data-price="30"><div class="card-body"><h3>Чай</h3><span class="price">30₽</span></div></div>
+                        <div class="menu-card" data-name="Молочный коктейль" data-price="220"><div class="card-body"><h3>Молочный коктейль</h3><span class="price">220₽</span></div></div>
+                        <div class="menu-card" data-name="Мохито" data-price="220"><div class="card-body"><h3>Мохито</h3><span class="price">220₽</span></div></div>
+                        <div class="menu-card" data-name="Холодный кофе" data-price="190"><div class="card-body"><h3>Холодный кофе</h3><span class="price">190₽</span></div></div>
+                        <div class="menu-card" data-name="Сироп" data-price="20"><div class="card-body"><h3>Сироп</h3><span class="price">20₽</span></div></div>
+                        <div class="menu-card" data-name="Мороженое пломбир" data-price="49"><div class="card-body"><h3>Мороженое пломбир</h3><span class="price">49₽</span></div></div>
                     </div>
                 </div>
             </div>
@@ -186,45 +185,25 @@
         </div>
     </section>
 
+    <!-- ГАЛЕРЕЯ (только для владельца) -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <h2>📸 Наша галерея</h2>
+            <p class="gallery-subtitle">Фотографии наших блюд и атмосферы</p>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Сюда владелец добавляет фото вручную через код -->
+                <div class="gallery-item"><img src="img/gallery1.jpg" alt="Фото" /></div>
+                <div class="gallery-item"><img src="img/gallery2.jpg" alt="Фото" /></div>
+                <div class="gallery-item"><img src="img/gallery3.jpg" alt="Фото" /></div>
+                <div class="gallery-item"><img src="img/gallery4.jpg" alt="Фото" /></div>
+            </div>
+        </div>
+    </section>
 
-    <!-- ОТЗЫВЫ -->
+    <!-- ОТЗЫВЫ (настоящие, с сохранением) -->
     <section class="reviews" id="reviews">
         <div class="container">
-            <h2>💬 Отзывы гостей</h2>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="review-header">
-                        <span class="review-name">Анна</span>
-                        <span class="review-rating">⭐⭐⭐⭐⭐</span>
-                    </div>
-                    <p class="review-text">"Очень вкусная шаурма! Мясо сочное, лаваш свежий. Обязательно вернусь!"</p>
-                    <span class="review-date">12 июня 2026</span>
-                </div>
-                <div class="review-card">
-                    <div class="review-header">
-                        <span class="review-name">Михаил</span>
-                        <span class="review-rating">⭐⭐⭐⭐⭐</span>
-                    </div>
-                    <p class="review-text">"Лучшая шаурма в городе! Быстрая доставка и отличное обслуживание."</p>
-                    <span class="review-date">10 июня 2026</span>
-                </div>
-                <div class="review-card">
-                    <div class="review-header">
-                        <span class="review-name">Екатерина</span>
-                        <span class="review-rating">⭐⭐⭐⭐</span>
-                    </div>
-                    <p class="review-text">"Вкусный гирос и донер. Цены приятные, порции большие. Рекомендую!"</p>
-                    <span class="review-date">8 июня 2026</span>
-                </div>
-                <div class="review-card">
-                    <div class="review-header">
-                        <span class="review-name">Сергей</span>
-                        <span class="review-rating">⭐⭐⭐⭐⭐</span>
-                    </div>
-                    <p class="review-text">"Очень вкусные крылышки в кляре! Подают с хрустящей картошкой. 👍"</p>
-                    <span class="review-date">5 июня 2026</span>
-                </div>
-            </div>
+            <h2>💬 Отзывы наших гостей</h2>
 
             <div class="review-form-wrapper">
                 <h3>Оставить отзыв</h3>
@@ -238,22 +217,13 @@
                         <option value="1">⭐</option>
                     </select>
                     <textarea id="reviewText" placeholder="Ваш отзыв..." required></textarea>
-                    <button type="submit">Отправить</button>
+                    <button type="submit">Отправить отзыв</button>
                 </form>
             </div>
-        </div>
-    </section>
 
-    <!-- ЗАГРУЗКА ФОТО/ВИДЕО -->
-    <section class="upload-section" id="upload">
-        <div class="container">
-            <h2>📸 Наши фото и видео</h2>
-            <p>Загружайте свои фото и видео из нашего заведения!</p>
-            <form id="uploadForm" class="upload-form">
-                <input type="file" id="fileInput" accept="image/*,video/*" multiple />
-                <button type="submit">Загрузить</button>
-            </form>
-            <div id="gallery" class="gallery"></div>
+            <div id="reviewsList" class="reviews-list">
+                <p class="no-reviews">Пока нет отзывов. Будьте первыми!</p>
+            </div>
         </div>
     </section>
 
