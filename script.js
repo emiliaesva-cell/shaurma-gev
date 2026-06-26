@@ -1,62 +1,51 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     // ===== ВКЛАДКИ МЕНЮ =====
-    // Находим все кнопки категорий
     const tabs = document.querySelectorAll('.tab-btn');
     const categories = document.querySelectorAll('.menu-category');
 
-    // Если есть вкладки, настраиваем их работу
-    if (tabs.length > 0 && categories.length > 0) {
-        tabs.forEach(tab => {
-            tab.addEventListener('click', function () {
-                // Убираем активный класс у всех вкладок
-                tabs.forEach(t => t.classList.remove('active'));
-                // Добавляем активный класс текущей вкладке
-                this.classList.add('active');
-
-                // Прячем все категории
-                categories.forEach(cat => cat.classList.remove('active'));
-
-                // Показываем нужную категорию
-                const categoryId = this.dataset.category;
-                const targetCategory = document.getElementById(categoryId);
-                if (targetCategory) {
-                    targetCategory.classList.add('active');
-                }
-            });
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+            tabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            categories.forEach(cat => cat.classList.remove('active'));
+            const categoryId = this.dataset.category;
+            document.getElementById(categoryId).classList.add('active');
         });
-    } else {
-        // Если вкладок нет, используем альтернативный вариант
-        // Делаем все категории видимыми с заголовками-разделителями
-        document.querySelectorAll('.menu-category').forEach(cat => {
-            cat.classList.add('active');
-        });
-    }
+    });
 
-    // ===== ГАЛЕРЕЯ =====
-    const galleryImages = [
+    // ===== ГАЛЕРЕЯ (ПРОСТАЯ ВЕРСИЯ) =====
+    const galleryGrid = document.getElementById('galleryGrid');
+
+    // СПИСОК ТВОИХ ФОТО — МЕНЯЙ ЗДЕСЬ
+    const photos = [
         '1.jpg',
         '2.jpg',
         '3.jpg',
         '4.jpg',
         '5.jpg',
         '6.jpg'
-        // Добавляй новые фото сюда
     ];
 
-    const galleryGrid = document.getElementById('galleryGrid');
-
     if (galleryGrid) {
-        galleryImages.forEach(imageName => {
+        photos.forEach(function(photo) {
             const div = document.createElement('div');
-            div.classList.add('gallery-item');
+            div.className = 'gallery-item';
             
             const img = document.createElement('img');
-            img.src = `img/${imageName}`;
-            img.alt = 'Фото нашей шаурмичной';
+            img.src = 'img/' + photo;
+            img.alt = 'Фото';
+            
+            // Если фото не загрузилось — покажем ошибку в консоли
+            img.onerror = function() {
+                console.log('Не удалось загрузить: img/' + photo);
+            };
+            
             div.appendChild(img);
             galleryGrid.appendChild(div);
         });
+    } else {
+        console.log('Ошибка: galleryGrid не найден!');
     }
 
     // ===== ОТЗЫВЫ =====
