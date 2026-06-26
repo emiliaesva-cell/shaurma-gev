@@ -4,14 +4,18 @@ document.addEventListener('DOMContentLoaded', function () {
     // СЮДА ДОБАВЛЯЙ НАЗВАНИЯ СВОИХ ФОТО
     const galleryImages = [
       const galleryImages = [
+    const galleryImages = [
     'gallery1.jpg',
     'gallery2.jpg',
     'gallery3.jpg',
     'gallery4.jpg',
     'gallery5.jpg',
-    'moja_foto.jpg',    // ← твоё фото
-    'eda.jpg',          // ← твоё фото
-    'interior.png'      // ← твоё фото
+    '1.jpg',   // ← добавила
+    '2.jpg',   // ← добавила
+    '3.jpg',   // ← добавила
+    '4.jpg',   // ← добавила
+    '5.jpg',   // ← добавила
+    '6.jpg'    // ← добавила
 ];
         // Добавляй новые фото сюда, например:
         // 'moya_foto.jpg',
