@@ -1,48 +1,31 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // ===== ГАЛЕРЕЯ: список твоих фото =====
-    // СЮДА ДОБАВЛЯЙ НАЗВАНИЯ СВОИХ ФОТО
+    // ===== ГАЛЕРЕЯ =====
     const galleryImages = [
-      const galleryImages = [
-    const galleryImages = [
-   const galleryImages = [
-    'gallery1.jpg',
-    'gallery2.jpg',
-    'gallery3.jpg',
-    'gallery4.jpg',
-    'gallery5.jpg',
-    '1.jpg',
-    '2.jpg',
-    '3.jpg',
-    '4.jpg',
-    '5.jpg',
-    '6.jpg'
-];
-       
+        'gallery1.jpg',
+        'gallery2.jpg',
+        'gallery3.jpg',
+        'gallery4.jpg',
+        'gallery5.jpg',
+        '1.jpg',
+        '2.jpg',
+        '3.jpg',
+        '4.jpg',
+        '5.jpg',
+        '6.jpg'
     ];
 
     const galleryGrid = document.getElementById('galleryGrid');
 
-    // Проверяем, есть ли контейнер для галереи
     if (galleryGrid) {
         galleryImages.forEach(imageName => {
             const div = document.createElement('div');
             div.classList.add('gallery-item');
             
-            // Проверяем, видео ли это
-            if (imageName.endsWith('.mp4') || imageName.endsWith('.webm') || imageName.endsWith('.mov')) {
-                const video = document.createElement('video');
-                video.src = `img/${imageName}`;
-                video.controls = true;
-                video.muted = true;
-                div.appendChild(video);
-            } else {
-                const img = document.createElement('img');
-                img.src = `img/${imageName}`;
-                img.alt = 'Фото нашей шаурмичной';
-                div.appendChild(img);
-            }
-            
+            const img = document.createElement('img');
+            img.src = `img/${imageName}`;
+            img.alt = 'Фото нашей шаурмичной';
+            div.appendChild(img);
             galleryGrid.appendChild(div);
         });
     }
