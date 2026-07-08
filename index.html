@@ -78,6 +78,7 @@
                 <h3 class="category-title">ФРИ</h3>
                 <div class="menu-items">
                     <div class="menu-item"><span class="item-name">Наггетсы (6 шт.)</span><span class="item-price">109 ₽</span></div>
+                    <div class="menu-item"><span class="item-name">Фри малая (100 г)</span><span class="item-price">100 ₽</span></div>
                     <div class="menu-item"><span class="item-name">Фри большая (150 г)</span><span class="item-price">140 ₽</span></div>
                     <div class="menu-item"><span class="item-name">Крылышки в кляре (4 шт.)</span><span class="item-price">150 ₽</span></div>
                 </div>
@@ -106,7 +107,33 @@
                 </div>
             </div>
 
-            <!-- ===== ДОБАВКИ (отдельное окно) ===== -->
+            <!-- ===== КОФЕ И ХОЛОДНЫЕ НАПИТКИ (новое окно) ===== -->
+            <div class="menu-category" id="drinks">
+                <h3 class="category-title">☕ КОФЕ И ХОЛОДНЫЕ НАПИТКИ</h3>
+                <div class="menu-items">
+                    <!-- Чай -->
+                    <div class="menu-item"><span class="item-name">Чай чёрный</span><span class="item-price">30 ₽</span></div>
+                    <div class="menu-item"><span class="item-name">Чай зелёный</span><span class="item-price">30 ₽</span></div>
+                    
+                    <!-- Кофе (большой/маленький) -->
+                    <div class="menu-item"><span class="item-name">Эспрессо малый (30 мл)</span><span class="item-price">55 ₽</span></div>
+                    <div class="menu-item"><span class="item-name">Эспрессо большой (60 мл)</span><span class="item-price">80 ₽</span></div>
+                    <div class="menu-item"><span class="item-name">Американо малый (150 мл)</span><span class="item-price">65 ₽</span></div>
+                    <div class="menu-item"><span class="item-name">Американо большой (250 мл)</span><span class="item-price">95 ₽</span></div>
+                    <div class="menu-item"><span class="item-name">Капучино малый (150 мл)</span><span class="item-price">70 ₽</span></div>
+                    <div class="menu-item"><span class="item-name">Капучино большой (250 мл)</span><span class="item-price">100 ₽</span></div>
+                    <div class="menu-item"><span class="item-name">Латте малый (150 мл)</span><span class="item-price">75 ₽</span></div>
+                    <div class="menu-item"><span class="item-name">Латте большой (250 мл)</span><span class="item-price">105 ₽</span></div>
+                    
+                    <!-- Холодные напитки -->
+                    <div class="menu-item"><span class="item-name">Холодный кофе</span><span class="item-price">190 ₽</span></div>
+                    <div class="menu-item"><span class="item-name">Молочный коктейль</span><span class="item-price">220 ₽</span></div>
+                    <div class="menu-item"><span class="item-name">Мохито</span><span class="item-price">220 ₽</span></div>
+                    <div class="menu-item"><span class="item-name">Шоколад</span><span class="item-price">60 ₽</span></div>
+                </div>
+            </div>
+
+            <!-- ===== ДОБАВКИ (очищено от напитков) ===== -->
             <div class="menu-category" id="additives">
                 <h3 class="category-title">🍦 ДОБАВКИ</h3>
                 <div class="menu-items">
@@ -125,29 +152,10 @@
                     <div class="menu-item"><span class="item-name">Картошка фри</span><span class="item-price">20 ₽</span></div>
                     <div class="menu-item"><span class="item-name">Доп. мясо (курица/свинина)</span><span class="item-price">20 ₽</span></div>
                     
-                    <!-- Напитки -->
-                    <div class="menu-item"><span class="item-name">Чай чёрный/зелёный</span><span class="item-price">30 ₽</span></div>
-                    
-                    <!-- КОФЕ (большой/маленький) -->
-                    <div class="menu-item"><span class="item-name">Эспрессо малый (30 мл)</span><span class="item-price">55 ₽</span></div>
-                    <div class="menu-item"><span class="item-name">Эспрессо большой (60 мл)</span><span class="item-price">80 ₽</span></div>
-                    <div class="menu-item"><span class="item-name">Американо малый (150 мл)</span><span class="item-price">65 ₽</span></div>
-                    <div class="menu-item"><span class="item-name">Американо большой (250 мл)</span><span class="item-price">95 ₽</span></div>
-                    <div class="menu-item"><span class="item-name">Капучино малый (150 мл)</span><span class="item-price">70 ₽</span></div>
-                    <div class="menu-item"><span class="item-name">Капучино большой (250 мл)</span><span class="item-price">100 ₽</span></div>
-                    <div class="menu-item"><span class="item-name">Латте малый (150 мл)</span><span class="item-price">75 ₽</span></div>
-                    <div class="menu-item"><span class="item-name">Латте большой (250 мл)</span><span class="item-price">105 ₽</span></div>
-                    
-                    <!-- Остальные напитки и десерты -->
-                    <div class="menu-item"><span class="item-name">Шоколад</span><span class="item-price">60 ₽</span></div>
-                    <div class="menu-item"><span class="item-name">Молочный коктейль</span><span class="item-price">220 ₽</span></div>
-                    <div class="menu-item"><span class="item-name">Мохито</span><span class="item-price">220 ₽</span></div>
-                    <div class="menu-item"><span class="item-name">Холодный кофе</span><span class="item-price">190 ₽</span></div>
-                    
-                    <!-- СИРОПЫ -->
+                    <!-- Сиропы -->
                     <div class="menu-item"><span class="item-name">Сироп (ваниль/карамель/шоколад)</span><span class="item-price">20 ₽</span></div>
                     
-                    <!-- МОРОЖЕНОЕ -->
+                    <!-- Мороженое -->
                     <div class="menu-item"><span class="item-name">Мороженое пломбир (ваниль) 50 г</span><span class="item-price">49 ₽</span></div>
                     <div class="menu-item"><span class="item-name">Мороженое пломбир (ваниль) 100 г</span><span class="item-price">79 ₽</span></div>
                 </div>
